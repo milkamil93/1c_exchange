@@ -91,9 +91,9 @@ class EX1Cmanager {
    */
 	function getModConfig() {
 		$output = array();
-		if (mysql_num_rows(mysql_query("SHOW TABLES FROM $this->dbname LIKE '$this->mod_tbl_config'")) > 0) {
+		if ($this->modx->db->getRecordCount($this->modx->db->query("SHOW TABLES FROM $this->dbname LIKE '$this->mod_tbl_config'")) > 0) {
 			$config_query = $this->modx->db->select("*", $this->mod_tbl_config);
-			while ($config = mysql_fetch_array($config_query)) {
+			while ($config = $this->modx->db->getRow($config_query)) {
 				$output[$config[1]] = $config[2];
 			}
 		}
