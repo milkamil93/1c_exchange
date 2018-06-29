@@ -1,3 +1,1 @@
-</div>
-</body>
-</html>
+<?php include_once MODX_MANAGER_PATH . 'includes/footer.inc.php'; ?>
